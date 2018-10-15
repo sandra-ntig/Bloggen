@@ -1,2 +1,2 @@
 
-<p> 	&copy; Sandra larsson 2018</p>
+<p> 	&copy; Sandra Larsson, 2018</p>

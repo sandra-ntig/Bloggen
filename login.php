@@ -1,9 +1,8 @@
 <?php
+session_start(); //Initerar sessionen
+
 //Hämtar funktioner för databasförfrågningar
 require_once 'admin/sql_query.php';
-
-//Initerar sessionen
-session_start();
 
 //Meddelande under loginformuläret
 $feedback_login = "";
@@ -116,7 +115,7 @@ $feedback_register = "";
                         <label>Jag godkänner användarvillkoren</label>
                         </div>
                         <div class="field">
-                        <input name="new_user" type="submit" value="Skapa ny användare"</>
+                        <input name="new_user" type="submit" value="Skapa ny användare"/>
                         </div>
                          <!-- Meddelande til användaren om registrering lyckats -->
                         <?php if(isset($feedback_register)) { ?>

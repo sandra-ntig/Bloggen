@@ -1,6 +1,6 @@
 <?php 
-    //Initiererar session
-    session_start();
+      session_start();//Initiererar session
+  
 
     //Meddelande vid utloggning
     $feedback = "";
@@ -36,7 +36,7 @@
 </header>
 <main>
  
- <p class="logout"> <?php echo $feedback;?> <a href="login.php">Klicka här</a>  för att logga in igen</p>
+ <p class="logout"> <?php echo $feedback;?> <a href="login.php">Klicka här för att logga in igen</a> </p>
 
 </main>
 <footer><?php include 'includes/footer.php'; ?></footer>

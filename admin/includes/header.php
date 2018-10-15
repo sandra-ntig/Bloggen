@@ -2,9 +2,10 @@
 <a href='../index.php'><h1>Boulderbloggen</h1></a>
 
 <?php
+session_start();
 //Hämtar funktioner för databasförfrågningar
 require_once 'sql_query.php';
-session_start();
+
 
     if (isset($_SESSION['authenticated'])) {
         

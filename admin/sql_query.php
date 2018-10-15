@@ -21,14 +21,14 @@ function authenticate($username, $password) {
     //Returnerar en associotiv array där varje fält motsvarar en rad från sql-frågan
     $row = mysqli_fetch_assoc($result);
 
-    //$hash = $row['password'];
+    $hash_password = $row['password'];
     $password_db = $row['password'];
     $userId = $row['id'];
     //$boooool = password_verify($password, $hash);
 
     //Kollar om det angivna lösenordet matchar det hashade i db
     //if(password_verify($password, $hash))
-    if(strcmp($password, $password_db) == 0)
+    if(password_verify($password, $hash_password))
     {
         //Sätter sessionsvariablen 'authenticated' till det användarnamn som gått igenom authentiseringen
         $_SESSION['authenticated'] = $username; 
@@ -69,11 +69,11 @@ function createUser($username, $password)  {
     {
 
             //Hasha lösernordet
-            //$hash_password = password_hash($password, PASSWORD_DEFAULT);
+            $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Skapa ny rad i tabellen user med följande username och password
             $query = 'INSERT INTO user (username, password)';
-            $query .= 'VALUES (\'' . mysqli_real_escape_string($db, $username) . '\', \'' . mysqli_real_escape_string($db, $password) . '\')';
+            $query .= 'VALUES (\'' . mysqli_real_escape_string($db, $username) . '\', \'' . mysqli_real_escape_string($db, $hash_password) . '\')';
             
             //Resultatet av sql-frågan sparas i en array
             $result = mysqli_query($db, $query);
