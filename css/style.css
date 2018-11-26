@@ -28,6 +28,12 @@ body {
     flex-basis: 250px;
 }
 
+a:link,
+a:visited,
+a:active,
+a:hover {
+    color: #fff;
+}
 
 hr {
     border: solid 1px #e3e3e3;

@@ -83,7 +83,7 @@ require_once 'admin/sql_query.php';
 </main>
 <footer>
     <?php include 'includes/footer.php' ?>
-<footer>
+    </footer>
 </div>
 </body>
 </html>
